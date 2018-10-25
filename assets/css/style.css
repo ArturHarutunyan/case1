@@ -1,0 +1,52 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	color:blue;
+	text-decoration: none;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+td{
+	border: 1px solid ;
+	text-align: center;
+	padding: 5px;
+}
+.container{
+	margin: 25px auto;
+	width: 50%;
+}
+#addNewAddress{float: left;}
+#exportInXML{float: right;}
+form{
+	border: 1px solid;
+}
+.fields{
+	margin: 15px;
+	padding: 3px;
+}
+.fields>label{
+	width: 25%;
+    display: inline-block;
+    text-align: right;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    cursor: pointer;
+}
+.cancel{
+	background-color: #f44336;
+}
+.buttonsBlock{
+	text-align: center;
+}
