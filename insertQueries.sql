@@ -1,8 +1,8 @@
 INSERT INTO `addresbook` (`id`, `name`, `firstName`, `city`, `street`, `zipCode`, `deleted`) VALUES
-(1, '', 'тест', 1, 'asdfaa', '0056', 0),
-(2, '', 'тест', 1, 'asdfe', '0056', 0),
-(3, 'Artur', 'Harutunyan', 1, 'Shiraki 13, 35', '0065', 0),
-(4, 'harutunyan', 'Artur', 1, 'Shiraki 13, 35', '0055', 0);
+(1, 'Armen', 'Grigoryan', 1, 'Vardanants 4', '0056', 0),
+(2, 'testNmae', 'test latNmae', 2, 'tastAddress', '0056', 0),
+(3, 'Artur', 'Harutunyan', 3, 'Shiraki 13, 35', '0065', 0),
+(4, 'harutunyan', 'Artur', 4, 'Shiraki 13, 35', '0055', 0);
 INSERT INTO `cities` (`id`, `name`) VALUES
 (1, 'Schaffhausen'),
 (2, 'Aargau'),
