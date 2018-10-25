@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 25, 2018 at 03:28 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Хост: 127.0.0.1
+-- Время создания: Окт 25 2018 г., 22:08
+-- Версия сервера: 10.1.13-MariaDB
+-- Версия PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,17 +17,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `case1`
+-- База данных: `case1`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addresbook`
+-- Структура таблицы `addresbook`
 --
 
 CREATE TABLE `addresbook` (
   `id` int(250) NOT NULL,
+  `name` varchar(250) NOT NULL,
   `firstName` varchar(250) NOT NULL,
   `city` int(50) NOT NULL,
   `street` varchar(250) NOT NULL,
@@ -38,17 +37,19 @@ CREATE TABLE `addresbook` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `addresbook`
+-- Дамп данных таблицы `addresbook`
 --
 
-INSERT INTO `addresbook` (`id`, `firstName`, `city`, `street`, `zipCode`, `deleted`) VALUES
-(1, 'тест', 1, 'asdf', '0056', 0),
-(2, 'тест', 1, 'asdf', '0056', 0);
+INSERT INTO `addresbook` (`id`, `name`, `firstName`, `city`, `street`, `zipCode`, `deleted`) VALUES
+(1, '', 'тест', 1, 'asdfaa', '0056', 0),
+(2, '', 'тест', 1, 'asdfe', '0056', 0),
+(3, 'Artur', 'Harutunyan', 1, 'Shiraki 13, 35', '0065', 0),
+(4, 'harutunyan', 'Artur', 1, 'Shiraki 13, 35', '0055', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cities`
+-- Структура таблицы `cities`
 --
 
 CREATE TABLE `cities` (
@@ -57,7 +58,7 @@ CREATE TABLE `cities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cities`
+-- Дамп данных таблицы `cities`
 --
 
 INSERT INTO `cities` (`id`, `name`) VALUES
@@ -95,48 +96,45 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 (32, 'Solothurn');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `addresbook`
+-- Индексы таблицы `addresbook`
 --
 ALTER TABLE `addresbook`
   ADD PRIMARY KEY (`id`),
   ADD KEY `addresbook_ibfk_1` (`city`);
 
 --
--- Indexes for table `cities`
+-- Индексы таблицы `cities`
 --
 ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `addresbook`
+-- AUTO_INCREMENT для таблицы `addresbook`
 --
 ALTER TABLE `addresbook`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `cities`
+-- AUTO_INCREMENT для таблицы `cities`
 --
 ALTER TABLE `cities`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `addresbook`
+-- Ограничения внешнего ключа таблицы `addresbook`
 --
 ALTER TABLE `addresbook`
   ADD CONSTRAINT `addresbook_ibfk_1` FOREIGN KEY (`city`) REFERENCES `cities` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
